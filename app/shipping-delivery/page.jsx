@@ -1,11 +1,7 @@
 // import Footer from "@/components/HomePageComponent/Footer";
 // import MainFooter from "@/components/MainFooter";
 // import Navbar from "@/components/Navbar";";
-import React from "react";
-import Image from "next/image";
-import partner1 from "../../public/partner1.svg";
-import partner2 from "../../public/partner2.svg";
-import partner3 from "../../public/partner3.svg";
+
 function page() {
   return (
     <>
