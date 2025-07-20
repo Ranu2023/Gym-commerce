@@ -193,7 +193,7 @@ export default function CartPage() {
 
         const checkoutOptions = {
           paymentSessionId: sessionId,
-          returnUrl: "https://www.rjmanish.shop/my-course",
+          returnUrl: "https://gym-commerce.vercel.app/payment/success",
         };
 
         cashfree.checkout(checkoutOptions).then((result) => {
