@@ -193,7 +193,7 @@ export default function CartPage() {
 
         const checkoutOptions = {
           paymentSessionId: sessionId,
-          returnUrl: "https://gym-commerce.vercel.app/payment/success",
+          returnUrl: `https://gym-commerce.vercel.app/payment/success?order_id=${orderId}`,
         };
 
         cashfree.checkout(checkoutOptions).then((result) => {
