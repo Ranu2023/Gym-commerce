@@ -43,10 +43,10 @@ export default function ProfilePage() {
     const parsedUser = JSON.parse(userData);
     setUser(parsedUser);
     setEditForm({
-      name: parsedUser.name || "",
-      email: parsedUser.email || "",
-      phone: parsedUser.phone || "",
-      address: parsedUser.address || "",
+      name: parsedUser?.name || "",
+      email: parsedUser?.email || "",
+      phone: parsedUser?.phone || "",
+      address: parsedUser?.address?.country || "",
     });
 
     fetchUserProfile();
@@ -59,10 +59,10 @@ export default function ProfilePage() {
       if (response.data.success) {
         const userData = response.data.data;
         setEditForm({
-          name: userData.name || "",
-          email: userData.email || "",
-          phone: userData.phone || "",
-          address: userData.address || "",
+          name: userData?.name || "",
+          email: userData?.email || "",
+          phone: userData?.phone || "",
+          address: userData?.address?.country || "",
         });
       }
     } catch (error) {
@@ -380,7 +380,7 @@ export default function ProfilePage() {
                 {isEditing ? (
                   <textarea
                     name="address"
-                    value={editForm.address}
+                    value={editForm.address || ""}
                     onChange={handleInputChange}
                     rows={3}
                     placeholder="Enter your address"
