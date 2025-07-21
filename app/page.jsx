@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Star, Shield, Truck, Award } from "lucide-react";
 import Banner from "@/components/Banner.jsx";
+import ProductPreview from "@/components/ProductPreview.jsx";
 
 export default function HomePage() {
   const features = [
@@ -113,6 +114,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <section className="py-20"></section>
 
       {/* Trending Products Section */}
       <section className="py-20">
@@ -126,51 +128,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {trendingProducts?.map((product, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <div className="h-48 bg-gray-200 flex items-center justify-center">
-                  <img
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    className="h-32 w-32 object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                  <div className="flex items-center mb-2">
-                    <div className="flex text-yellow-400">
-                      {[...Array(5)]?.map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-4 w-4 ${
-                            i < Math.floor(product.rating) ? "fill-current" : ""
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="ml-2 text-gray-600">
-                      ({product.rating})
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-blue-600">
-                      {product.price}
-                    </span>
-                    <Link
-                      href="/products"
-                      className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-                    >
-                      View Details
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ProductPreview />
 
           <div className="text-center mt-12">
             <Link
