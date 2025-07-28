@@ -137,7 +137,7 @@ export default function ProductsPage() {
 
           {/* Search and Filters */}
           <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <form onSubmit={handleSearch} className="mb-4">
+            {/* <form onSubmit={handleSearch} className="mb-4">
               <div className="flex gap-4">
                 <div className="flex-1 relative">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -156,7 +156,7 @@ export default function ProductsPage() {
                   Search
                 </button>
               </div>
-            </form>
+            </form> */}
 
             <div className="flex flex-wrap gap-4 items-center justify-between">
               {/* Category Filter */}

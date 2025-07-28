@@ -42,7 +42,7 @@ export default function ProductPreview() {
           </h2>
           <Link
             href="/products"
-            className="text-blue-600 hover:underline text-sm"
+            className="text-blue-600  hover:underline text-sm"
           >
             View All
           </Link>

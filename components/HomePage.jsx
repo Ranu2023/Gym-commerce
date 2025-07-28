@@ -1,0 +1,609 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import ProductPreview from "@/components/ProductPreview.jsx";
+import {
+  Search,
+  ShoppingCart,
+  Menu,
+  X,
+  Star,
+  Shield,
+  Truck,
+  Award,
+  Users,
+  ChevronLeft,
+  ChevronRight,
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Quote,
+  ArrowUp,
+} from "lucide-react";
+import Image from "next/image";
+
+export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const heroSlides = [
+    {
+      image:
+        "/placeholder.svg?height=600&width=1200&text=Fuel+Your+Fitness+Journey",
+      title: "Fuel Your Fitness Journey",
+      subtitle: "Premium supplements for maximum results",
+      cta: "Shop Now",
+    },
+    {
+      image:
+        "/placeholder.svg?height=600&width=1200&text=Unleash+Your+Potential",
+      title: "Unleash Your Potential",
+      subtitle: "Science-backed nutrition for athletes",
+      cta: "Explore Products",
+    },
+    {
+      image:
+        "/placeholder.svg?height=600&width=1200&text=Build+Stronger+Faster",
+      title: "Build Stronger, Faster",
+      subtitle: "Trusted by fitness professionals worldwide",
+      cta: "Get Started",
+    },
+    {
+      image: "/placeholder.svg?height=600&width=1200&text=Recovery+Redefined",
+      title: "Recovery Redefined",
+      subtitle: "Advanced formulas for peak performance",
+      cta: "Shop Collection",
+    },
+  ];
+
+  const products = [
+    {
+      id: 1,
+      name: "Whey Protein Isolate",
+      price: "₹2,499",
+      originalPrice: "₹2,999",
+      image: "/placeholder.svg?height=300&width=300&text=Whey+Protein",
+      rating: 4.8,
+      reviews: 1250,
+    },
+    {
+      id: 2,
+      name: "Mass Gainer Pro",
+      price: "₹1,899",
+      originalPrice: "₹2,299",
+      image: "/placeholder.svg?height=300&width=300&text=Mass+Gainer",
+      rating: 4.6,
+      reviews: 890,
+    },
+    {
+      id: 3,
+      name: "Pre-Workout Fuel",
+      price: "₹1,299",
+      originalPrice: "₹1,599",
+      image: "/placeholder.svg?height=300&width=300&text=Pre+Workout",
+      rating: 4.7,
+      reviews: 650,
+    },
+    {
+      id: 4,
+      name: "BCAA Recovery",
+      price: "₹999",
+      originalPrice: "₹1,199",
+      image: "/placeholder.svg?height=300&width=300&text=BCAA",
+      rating: 4.5,
+      reviews: 420,
+    },
+    {
+      id: 5,
+      name: "Creatine Monohydrate",
+      price: "₹799",
+      originalPrice: "₹999",
+      image: "/placeholder.svg?height=300&width=300&text=Creatine",
+      rating: 4.9,
+      reviews: 980,
+    },
+    {
+      id: 6,
+      name: "Fat Burner Elite",
+      price: "₹1,599",
+      originalPrice: "₹1,899",
+      image: "/placeholder.svg?height=300&width=300&text=Fat+Burner",
+      rating: 4.4,
+      reviews: 320,
+    },
+    {
+      id: 7,
+      name: "Multivitamin Plus",
+      price: "₹699",
+      originalPrice: "₹899",
+      image: "/placeholder.svg?height=300&width=300&text=Multivitamin",
+      rating: 4.6,
+      reviews: 750,
+    },
+    {
+      id: 8,
+      name: "Omega-3 Fish Oil",
+      price: "₹899",
+      originalPrice: "₹1,099",
+      image: "/placeholder.svg?height=300&width=300&text=Omega+3",
+      rating: 4.7,
+      reviews: 560,
+    },
+  ];
+
+  const testimonials = [
+    {
+      name: "Rahul Sharma",
+      role: "Professional Bodybuilder",
+      image: "/placeholder.svg?height=80&width=80&text=RS",
+      quote:
+        "FitSupp has been my go-to supplement brand for 3 years. The quality is unmatched and results speak for themselves.",
+      rating: 5,
+    },
+    {
+      name: "Priya Patel",
+      role: "Fitness Enthusiast",
+      image: "/placeholder.svg?height=80&width=80&text=PP",
+      quote:
+        "Amazing products with fast delivery. Their whey protein helped me achieve my fitness goals faster than expected.",
+      rating: 5,
+    },
+    {
+      name: "Arjun Singh",
+      role: "Personal Trainer",
+      image: "/placeholder.svg?height=80&width=80&text=AS",
+      quote:
+        "I recommend FitSupp to all my clients. Premium quality supplements at affordable prices. Highly satisfied!",
+      rating: 5,
+    },
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length
+    );
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-100 relative overflow-hidden">
+      {/* Watermark Pattern */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 opacity-[0.02] text-black text-8xl font-bold transform rotate-12 select-none overflow-hidden">
+          <div className="grid grid-cols-6 gap-32 h-full w-full">
+            {Array.from({ length: 30 }).map((_, i) => (
+              <div
+                key={i}
+                className="flex flex-col justify-center items-center space-y-32"
+              >
+                <span>MC</span>
+                <span>MC</span>
+                <span>MC</span>
+                <span>MC</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Top Promotional Banner */}
+      <div className="relative  bg-gradient-to-r from-red-500 to-orange-500 text-white text-center py-2 text-sm  z-10">
+        <div className="container mx-auto px-4">
+          <span className="font-medium">
+            🎉 FREE SHIPPING on orders above ₹999 | Use code: FREESHIP
+          </span>
+        </div>
+      </div>
+
+      {/* Hero Slider */}
+      <section className="relative h-[600px] overflow-hidden z-10">
+        {heroSlides.map((slide, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
+              index === currentSlide
+                ? "translate-x-0"
+                : index < currentSlide
+                ? "-translate-x-full"
+                : "translate-x-full"
+            }`}
+          >
+            <div className="relative h-full">
+              <Image
+                src={slide.image || "/placeholder.svg"}
+                alt={slide.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/60 via-blue-900/60 to-indigo-900/60" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center text-white max-w-4xl px-4">
+                  <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+                    {slide.title}
+                  </h1>
+                  <p className="text-xl md:text-2xl mb-8 animate-fade-in-delay text-blue-100">
+                    {slide.subtitle}
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-gradient-cta hover:bg-gradient-cta-hover text-white text-lg px-8 py-3 animate-fade-in-delay-2 shadow-lg"
+                  >
+                    {slide.cta}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Slider Controls */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all"
+        >
+          <ChevronLeft className="w-6 h-6 text-white" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all"
+        >
+          <ChevronRight className="w-6 h-6 text-white" />
+        </button>
+
+        {/* Slider Indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentSlide
+                  ? "bg-gradient-to-r from-red-500 to-orange-500"
+                  : "bg-white bg-opacity-50"
+              }`}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-12 bg-gray-200 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center space-y-2 group hover:scale-105 transition-transform bg-white p-6 rounded-lg shadow-sm">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:bg-gradient-secondary transition-all">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-gray-800">100% Authentic</h3>
+              <p className="text-sm text-gray-600">Genuine products only</p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 group hover:scale-105 transition-transform bg-white p-6 rounded-lg shadow-sm">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:bg-gradient-secondary transition-all">
+                <Truck className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-gray-800">Free Shipping</h3>
+              <p className="text-sm text-gray-600">On orders above ₹999</p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 group hover:scale-105 transition-transform bg-white p-6 rounded-lg shadow-sm">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:bg-gradient-secondary transition-all">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-gray-800">Lab Tested</h3>
+              <p className="text-sm text-gray-600">Quality guaranteed</p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 group hover:scale-105 transition-transform bg-white p-6 rounded-lg shadow-sm">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:bg-gradient-secondary transition-all">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-semibold text-gray-800">5M+ Customers</h3>
+              <p className="text-sm text-gray-600">Trusted worldwide</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Special Offer Banner */}
+      <section className="py-8 bg-gradient-cta relative z-10">
+        <div className="container mx-auto px-4 text-center">
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+            <div className="text-white">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                🔥 MEGA SALE - UP TO 50% OFF!
+              </h2>
+              <p className="text-lg">Limited time offer on all supplements</p>
+            </div>
+            <Button
+              size="lg"
+              className="bg-white text-red-500 hover:bg-gray-100 font-semibold shadow-lg"
+            >
+              Shop Sale Now
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Product Showcase */}
+      <section className="py-16 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gradient-primary mb-4">
+              Featured Products
+            </h2>
+            <p className="text-xl text-gray-600">
+              Premium supplements for your fitness goals
+            </p>
+          </div>
+
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"> */}
+          {/* {products.map((product) => (
+              <Card
+                key={product.id}
+                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border border-gray-200 shadow-sm"
+              >
+                <CardContent className="p-4">
+                  <div className="relative mb-4">
+                    <Image
+                      src={product.image || "/placeholder.svg"}
+                      alt={product.name}
+                      width={300}
+                      height={300}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                    <Badge className="absolute top-2 left-2 bg-gradient-to-r from-red-500 to-orange-500 text-white">
+                      {Math.round(
+                        ((Number.parseFloat(
+                          product.originalPrice
+                            .replace("₹", "")
+                            .replace(",", "")
+                        ) -
+                          Number.parseFloat(
+                            product.price.replace("₹", "").replace(",", "")
+                          )) /
+                          Number.parseFloat(
+                            product.originalPrice
+                              .replace("₹", "")
+                              .replace(",", "")
+                          )) *
+                          100
+                      )}
+                      % OFF
+                    </Badge>
+                  </div>
+
+                  <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-purple-600 transition-colors">
+                    {product.name}
+                  </h3>
+
+                  <div className="flex items-center mb-2">
+                    <div className="flex items-center">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < Math.floor(product.rating)
+                              ? "text-orange-500 fill-current"
+                              : "text-gray-300"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-600 ml-2">
+                      {product.rating} ({product.reviews})
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-2">
+                      <span className="text-2xl font-bold text-blue-600">
+                        {product.price}
+                      </span>
+                      <span className="text-lg text-gray-500 line-through">
+                        {product.originalPrice}
+                      </span>
+                    </div>
+                  </div>
+
+                  <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white transition-all duration-300">
+                    <ShoppingCart className="w-4 h-4 mr-2" />
+                    Add to Cart
+                  </Button>
+                </CardContent>
+              </Card>
+            ))} */}
+          <ProductPreview />
+          {/* </div> */}
+
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
+              onClick={() => (window.location.href = "/products")}
+            >
+              View All Products
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 bg-gray-200 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gradient-secondary mb-4">
+              Why Choose FitSupp?
+            </h2>
+            <p className="text-xl text-gray-600">
+              Your trusted partner in fitness nutrition
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-secondary transition-all">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Premium Quality
+              </h3>
+              <p className="text-gray-600">
+                All products are third-party tested and certified for purity and
+                potency.
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-secondary transition-all">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Expert Support
+              </h3>
+              <p className="text-gray-600">
+                Get personalized nutrition advice from certified fitness
+                experts.
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gradient-secondary transition-all">
+                <Truck className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                Fast Delivery
+              </h3>
+              <p className="text-gray-600">
+                Quick and secure delivery to your doorstep within 2-3 business
+                days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gradient-primary mb-4">
+              What Our Customers Say
+            </h2>
+            <p className="text-xl text-gray-600">
+              Real reviews from real customers
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow bg-white border border-gray-200"
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <Image
+                      src={testimonial.image || "/placeholder.svg"}
+                      alt={testimonial.name}
+                      width={60}
+                      height={60}
+                      className="rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-800">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 text-orange-500 fill-current"
+                      />
+                    ))}
+                  </div>
+                  <Quote className="w-8 h-8 text-gray-300 mb-2" />
+                  <p className="text-gray-700 italic">"{testimonial.quote}"</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-16 bg-gradient-primary relative z-10">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">Stay Updated</h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Get the latest fitness tips and exclusive offers
+          </p>
+
+          <div className="max-w-md mx-auto flex space-x-4">
+            <Input placeholder="Enter your email" className="flex-1 bg-white" />
+            <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white">
+              Subscribe
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+        {/* Quick Cart */}
+        <Button
+          size="lg"
+          className="rounded-full w-14 h-14 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <ShoppingCart className="w-6 h-6" />
+        </Button>
+
+        {/* Scroll to Top */}
+        {showScrollTop && (
+          <Button
+            onClick={scrollToTop}
+            size="lg"
+            className="rounded-full w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-xl transition-all"
+          >
+            <ArrowUp className="w-6 h-6" />
+          </Button>
+        )}
+      </div>
+    </div>
+  );
+}
