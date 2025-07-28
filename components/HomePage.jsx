@@ -18,10 +18,13 @@ import {
   ArrowUp,
 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const router = useRouter();
 
   const heroSlides = [
     {
@@ -169,6 +172,7 @@ export default function HomePage() {
                     {slide.subtitle}
                   </p>
                   <Button
+                    onClick={() => router.push("/products")}
                     size="lg"
                     className="bg-gradient-cta hover:bg-gradient-cta-hover text-white text-lg px-8 py-3 animate-fade-in-delay-2 shadow-lg"
                   >
