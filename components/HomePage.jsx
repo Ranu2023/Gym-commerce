@@ -4,13 +4,9 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import ProductPreview from "@/components/ProductPreview.jsx";
 import {
-  Search,
   ShoppingCart,
-  Menu,
-  X,
   Star,
   Shield,
   Truck,
@@ -18,21 +14,12 @@ import {
   Users,
   ChevronLeft,
   ChevronRight,
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
   Quote,
   ArrowUp,
 } from "lucide-react";
 import Image from "next/image";
 
 export default function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -63,81 +50,6 @@ export default function HomePage() {
       title: "Recovery Redefined",
       subtitle: "Advanced formulas for peak performance",
       cta: "Shop Collection",
-    },
-  ];
-
-  const products = [
-    {
-      id: 1,
-      name: "Whey Protein Isolate",
-      price: "₹2,499",
-      originalPrice: "₹2,999",
-      image: "/placeholder.svg?height=300&width=300&text=Whey+Protein",
-      rating: 4.8,
-      reviews: 1250,
-    },
-    {
-      id: 2,
-      name: "Mass Gainer Pro",
-      price: "₹1,899",
-      originalPrice: "₹2,299",
-      image: "/placeholder.svg?height=300&width=300&text=Mass+Gainer",
-      rating: 4.6,
-      reviews: 890,
-    },
-    {
-      id: 3,
-      name: "Pre-Workout Fuel",
-      price: "₹1,299",
-      originalPrice: "₹1,599",
-      image: "/placeholder.svg?height=300&width=300&text=Pre+Workout",
-      rating: 4.7,
-      reviews: 650,
-    },
-    {
-      id: 4,
-      name: "BCAA Recovery",
-      price: "₹999",
-      originalPrice: "₹1,199",
-      image: "/placeholder.svg?height=300&width=300&text=BCAA",
-      rating: 4.5,
-      reviews: 420,
-    },
-    {
-      id: 5,
-      name: "Creatine Monohydrate",
-      price: "₹799",
-      originalPrice: "₹999",
-      image: "/placeholder.svg?height=300&width=300&text=Creatine",
-      rating: 4.9,
-      reviews: 980,
-    },
-    {
-      id: 6,
-      name: "Fat Burner Elite",
-      price: "₹1,599",
-      originalPrice: "₹1,899",
-      image: "/placeholder.svg?height=300&width=300&text=Fat+Burner",
-      rating: 4.4,
-      reviews: 320,
-    },
-    {
-      id: 7,
-      name: "Multivitamin Plus",
-      price: "₹699",
-      originalPrice: "₹899",
-      image: "/placeholder.svg?height=300&width=300&text=Multivitamin",
-      rating: 4.6,
-      reviews: 750,
-    },
-    {
-      id: 8,
-      name: "Omega-3 Fish Oil",
-      price: "₹899",
-      originalPrice: "₹1,099",
-      image: "/placeholder.svg?height=300&width=300&text=Omega+3",
-      rating: 4.7,
-      reviews: 560,
     },
   ];
 
