@@ -28,15 +28,13 @@ export default function HomePage() {
 
   const heroSlides = [
     {
-      image:
-        "/placeholder.svg?height=600&width=1200&text=Fuel+Your+Fitness+Journey",
+      image: "/Banner1.mp4",
       title: "Fuel Your Fitness Journey",
       subtitle: "Premium supplements for maximum results",
       cta: "Shop Now",
     },
     {
-      image:
-        "/placeholder.svg?height=600&width=1200&text=Unleash+Your+Potential",
+      image: "/Banner2.mp4",
       title: "Unleash Your Potential",
       subtitle: "Science-backed nutrition for athletes",
       cta: "Explore Products",
@@ -86,7 +84,7 @@ export default function HomePage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(timer);
   }, [heroSlides.length]);
 
@@ -156,11 +154,17 @@ export default function HomePage() {
             }`}
           >
             <div className="relative h-full">
-              <Image
+              <video
                 src={slide.image || "/placeholder.svg"}
                 alt={slide.title}
                 fill
                 className="object-cover"
+                controls={false}
+                autoPlay={true}
+                loop={true}
+                muted={true}
+                playsInline={true}
+                poster="/placeholder.svg?height=600&width=1200&text=Hero+"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/60 via-blue-900/60 to-indigo-900/60" />
               <div className="absolute inset-0 flex items-center justify-center">
