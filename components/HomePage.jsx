@@ -29,28 +29,18 @@ export default function HomePage() {
   const heroSlides = [
     {
       image: "/Banner1.mp4",
-      title: "Fuel Your Fitness Journey",
-      subtitle: "Premium supplements for maximum results",
-      cta: "Shop Now",
     },
     {
       image: "/Banner2.mp4",
-      title: "Unleash Your Potential",
-      subtitle: "Science-backed nutrition for athletes",
-      cta: "Explore Products",
     },
     {
-      image:
-        "/placeholder.svg?height=600&width=1200&text=Build+Stronger+Faster",
-      title: "Build Stronger, Faster",
-      subtitle: "Trusted by fitness professionals worldwide",
-      cta: "Get Started",
+      image: "/Banner3.mp4",
     },
     {
-      image: "/placeholder.svg?height=600&width=1200&text=Recovery+Redefined",
-      title: "Recovery Redefined",
-      subtitle: "Advanced formulas for peak performance",
-      cta: "Shop Collection",
+      image: "/Banner4.mp4",
+    },
+    {
+      image: "/Banner5.mp4",
     },
   ];
 
@@ -86,7 +76,7 @@ export default function HomePage() {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 10000);
     return () => clearInterval(timer);
-  }, [heroSlides.length]);
+  }, [currentSlide, heroSlides.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -113,7 +103,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100 relative overflow-hidden">
       {/* Watermark Pattern */}
-      <div className="fixed inset-0 pointer-events-none z-0">
+      {/* <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute inset-0 opacity-[0.02] text-black text-8xl font-bold transform rotate-12 select-none overflow-hidden">
           <div className="grid grid-cols-6 gap-32 h-full w-full">
             {Array.from({ length: 30 }).map((_, i) => (
@@ -129,7 +119,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Top Promotional Banner */}
       <div className="relative  bg-gradient-to-r from-red-500 to-orange-500 text-white text-center py-2 text-sm  z-10">
@@ -141,7 +131,7 @@ export default function HomePage() {
       </div>
 
       {/* Hero Slider */}
-      <section className="relative h-[600px] overflow-hidden z-10">
+      <section className="relative h-[300px] md:h-[600px] overflow-hidden z-10">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
@@ -158,7 +148,7 @@ export default function HomePage() {
                 src={slide.image || "/placeholder.svg"}
                 alt={slide.title}
                 fill
-                className="object-cover"
+                className="md:w-full md:h-full object-cover"
                 controls={false}
                 autoPlay={true}
                 loop={true}
@@ -166,7 +156,7 @@ export default function HomePage() {
                 playsInline={true}
                 poster="/placeholder.svg?height=600&width=1200&text=Hero+"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/60 via-blue-900/60 to-indigo-900/60" />
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-purple-900/60 via-blue-900/60 to-indigo-900/60" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white max-w-4xl px-4">
                   <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
@@ -183,7 +173,7 @@ export default function HomePage() {
                     {slide.cta}
                   </Button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         ))}
@@ -218,6 +208,32 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Product Showcase */}
+      <section className="py-16 relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gradient-primary mb-4">
+              Featured Products
+            </h2>
+            <p className="text-xl text-gray-600">
+              Premium supplements for your fitness goals
+            </p>
+          </div>
+          <ProductPreview />
+
+          <div className="text-center mt-12">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
+              onClick={() => (window.location.href = "/products")}
+            >
+              View All Products
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Badges */}
       <section className="py-12 bg-gray-200 relative z-10">
         <div className="container mx-auto px-4">
@@ -247,8 +263,8 @@ export default function HomePage() {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center group-hover:bg-gradient-secondary transition-all">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-semibold text-gray-800">5M+ Customers</h3>
-              <p className="text-sm text-gray-600">Trusted worldwide</p>
+              <h3 className="font-semibold text-gray-800">100+ Customers</h3>
+              <p className="text-sm text-gray-600">Trusted Products</p>
             </div>
           </div>
         </div>
@@ -269,110 +285,6 @@ export default function HomePage() {
               className="bg-white text-red-500 hover:bg-gray-100 font-semibold shadow-lg"
             >
               Shop Sale Now
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Product Showcase */}
-      <section className="py-16 relative z-10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gradient-primary mb-4">
-              Featured Products
-            </h2>
-            <p className="text-xl text-gray-600">
-              Premium supplements for your fitness goals
-            </p>
-          </div>
-
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"> */}
-          {/* {products.map((product) => (
-              <Card
-                key={product.id}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white border border-gray-200 shadow-sm"
-              >
-                <CardContent className="p-4">
-                  <div className="relative mb-4">
-                    <Image
-                      src={product.image || "/placeholder.svg"}
-                      alt={product.name}
-                      width={300}
-                      height={300}
-                      className="w-full h-48 object-cover rounded-lg"
-                    />
-                    <Badge className="absolute top-2 left-2 bg-gradient-to-r from-red-500 to-orange-500 text-white">
-                      {Math.round(
-                        ((Number.parseFloat(
-                          product.originalPrice
-                            .replace("₹", "")
-                            .replace(",", "")
-                        ) -
-                          Number.parseFloat(
-                            product.price.replace("₹", "").replace(",", "")
-                          )) /
-                          Number.parseFloat(
-                            product.originalPrice
-                              .replace("₹", "")
-                              .replace(",", "")
-                          )) *
-                          100
-                      )}
-                      % OFF
-                    </Badge>
-                  </div>
-
-                  <h3 className="font-semibold text-lg mb-2 text-gray-800 group-hover:text-purple-600 transition-colors">
-                    {product.name}
-                  </h3>
-
-                  <div className="flex items-center mb-2">
-                    <div className="flex items-center">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 ${
-                            i < Math.floor(product.rating)
-                              ? "text-orange-500 fill-current"
-                              : "text-gray-300"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600 ml-2">
-                      {product.rating} ({product.reviews})
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-blue-600">
-                        {product.price}
-                      </span>
-                      <span className="text-lg text-gray-500 line-through">
-                        {product.originalPrice}
-                      </span>
-                    </div>
-                  </div>
-
-                  <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white transition-all duration-300">
-                    <ShoppingCart className="w-4 h-4 mr-2" />
-                    Add to Cart
-                  </Button>
-                </CardContent>
-              </Card>
-            ))} */}
-          <ProductPreview />
-          {/* </div> */}
-
-          <div className="text-center mt-12">
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white bg-transparent"
-              onClick={() => (window.location.href = "/products")}
-            >
-              View All Products
             </Button>
           </div>
         </div>
@@ -505,14 +417,6 @@ export default function HomePage() {
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
-        {/* Quick Cart */}
-        <Button
-          size="lg"
-          className="rounded-full w-14 h-14 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white shadow-lg hover:shadow-xl transition-all"
-        >
-          <ShoppingCart className="w-6 h-6" />
-        </Button>
-
         {/* Scroll to Top */}
         {showScrollTop && (
           <Button
