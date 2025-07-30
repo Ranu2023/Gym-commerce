@@ -81,7 +81,7 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendOrderNotificationEmail(order, customer) {
-  const adminEmail = process.env.ADMIN_EMAIL || "admin@yourgym.com";
+  const adminEmail = process.env.ADMIN_EMAIL || "muscledecode7@gmail.com";
 
   const emailHTML = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
