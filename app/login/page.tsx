@@ -38,7 +38,6 @@ export default function LoginPage() {
         localStorage.setItem("token", response.data.data.token);
         localStorage.setItem("user", JSON.stringify(response.data.data.user));
         router.push("/");
-        window.location.reload();
       }
     } catch (error: any) {
       setError(error.response?.data?.message || "Login failed");

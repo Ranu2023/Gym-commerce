@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Package, Truck, CheckCircle, MapPin, Calendar } from "lucide-react";
 import type { Order, AuthUser } from "@/lib/types";
 import api from "@/lib/axios";
+import { toast } from "sonner";
 
 export default function DeliveryDashboard() {
   const [user, setUser] = useState<AuthUser | null>(null);
@@ -51,7 +52,7 @@ export default function DeliveryDashboard() {
 
   const handleUpdateStatus = async (orderId: string) => {
     if (!updateForm.status || !updateForm.message) {
-      alert("Please fill in all required fields");
+      toast.error("Please fill in all required fields");
       return;
     }
 
@@ -62,13 +63,15 @@ export default function DeliveryDashboard() {
         updateForm
       );
       if (response.data.success) {
-        alert("Order status updated successfully!");
+        toast.success("Order status updated successfully!");
         setSelectedOrder(null);
         setUpdateForm({ status: "", message: "", location: "" });
         fetchOrders();
       }
     } catch (error: any) {
-      alert(error.response?.data?.message || "Failed to update order status");
+      toast.error(
+        error.response?.data?.message || "Failed to update order status"
+      );
     } finally {
       setIsUpdating(false);
     }
