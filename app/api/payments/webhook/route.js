@@ -134,8 +134,8 @@ async function sendOrderNotificationEmail(order, customer) {
             <p><strong>${item.product.name}</strong></p>
             <p>Category: ${item.product.category}</p>
             <p>Quantity: ${item.quantity}</p>
-            <p>Price: ₹${item.price}</p>
-            <p>Subtotal: ₹${item.subtotal}</p>
+            <p>Price: ₹ ${item.price}</p>
+            <p>Subtotal: ₹ ${item.subtotal}</p>
           </div>
         `
           )

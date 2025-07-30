@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Package, Calendar, User, Eye, Edit2, Filter } from "lucide-react";
 import type { Order, AuthUser } from "@/lib/types";
 import api from "@/lib/axios";
+import { toast } from "sonner";
 
 interface OrderWithUser extends Order {
   user: {
@@ -85,7 +86,7 @@ export default function AdminOrdersPage() {
 
   const handleUpdateStatus = async () => {
     if (!selectedOrder || !updateForm.status || !updateForm.message) {
-      alert("Please fill in all required fields");
+      toast.error("Please fill in all required fields");
       return;
     }
 
@@ -96,14 +97,16 @@ export default function AdminOrdersPage() {
         updateForm
       );
       if (response.data.success) {
-        alert("Order status updated successfully!");
+        toast.success("Order status updated successfully!");
         setShowUpdateModal(false);
         setSelectedOrder(null);
         setUpdateForm({ status: "", message: "", location: "" });
         fetchOrders();
       }
     } catch (error: any) {
-      alert(error.response?.data?.message || "Failed to update order status");
+      toast.error(
+        error.response?.data?.message || "Failed to update order status"
+      );
     } finally {
       setIsUpdating(false);
     }
@@ -149,7 +152,7 @@ export default function AdminOrdersPage() {
   const getOrderStats = () => {
     const stats = {
       total: orders?.length,
-      pending: orders.filter((o) => o.status === "pending")?.length,
+      pending: orders.filter((o) => o.status === "payment_pending")?.length,
       processing: orders.filter((o) => o.status === "processing")?.length,
       shipped: orders.filter((o) => o.status === "shipped")?.length,
       delivered: orders.filter((o) => o.status === "delivered")?.length,
@@ -329,10 +332,10 @@ export default function AdminOrdersPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      ${order.totalAmount?.toFixed(2) || "0.00"}
+                      ₹ {order.totalAmount?.toFixed(2) || "0.00"}
                       {order.discountAmount > 0 && (
                         <div className="text-xs text-green-600">
-                          -${order.discountAmount.toFixed(2)} discount
+                          - ₹ {order.discountAmount.toFixed(2)} discount
                         </div>
                       )}
                     </td>
@@ -398,7 +401,7 @@ export default function AdminOrdersPage() {
                     Customer: {selectedOrder.user?.name || "Unknown User"}
                   </div>
                   <div className="text-sm text-gray-600">
-                    Total: ${selectedOrder.totalAmount?.toFixed(2) || "0.00"}
+                    Total: ₹ {selectedOrder.totalAmount?.toFixed(2) || "0.00"}
                   </div>
                   <div className="text-sm text-gray-600">
                     Current Status: {selectedOrder.status}

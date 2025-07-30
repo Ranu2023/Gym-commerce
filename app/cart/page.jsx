@@ -13,6 +13,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import api from "@/lib/axios.js";
+import { toast } from "sonner";
 
 export default function CartPage() {
   const [cart, setCart] = useState({ items: [] });
@@ -164,12 +165,12 @@ export default function CartPage() {
 
   const handlePayment = async () => {
     if (!validateAddress()) {
-      alert("Please fill in all shipping address fields");
+      toast.error("Please fill in all shipping address fields");
       return;
     }
 
     if ((cart?.items?.length || 0) === 0) {
-      alert("Your cart is empty");
+      toast.error("Your cart is empty");
       return;
     }
 
@@ -187,7 +188,7 @@ export default function CartPage() {
           response?.data?.data || {};
 
         if (!cashfree || !sessionId) {
-          alert("Cashfree not loaded or session ID missing");
+          toast.error("Cashfree not loaded or session ID missing");
           return;
         }
 
@@ -304,7 +305,7 @@ export default function CartPage() {
                         {item?.product?.category}
                       </p>
                       <p className="text-lg font-bold text-blue-600 mt-1">
-                        ${(item?.product?.price || 0).toFixed(2)}
+                        ₹ {(item?.product?.price || 0).toFixed(2)}
                       </p>
                     </div>
 
@@ -354,7 +355,7 @@ export default function CartPage() {
 
                   <div className="mt-4 text-right">
                     <span className="text-lg font-semibold text-gray-900">
-                      Subtotal: $
+                      Subtotal: ₹
                       {(
                         (item?.product?.price || 0) * (item?.quantity || 0)
                       ).toFixed(2)}
