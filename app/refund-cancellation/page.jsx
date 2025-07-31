@@ -6,95 +6,91 @@ function page() {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="p-8">
-        <h1 className="text-3xl font-bold mb-6">
-          Refund and Cancellation Policy
-        </h1>
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-12 text-center">
+        <h1 className="text-4xl font-bold">Refund & Cancellation Policy</h1>
+        <p className="mt-2 text-lg">Customer Satisfaction Is Our Priority</p>
+      </div>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            1. Subscription Cancellation
-          </h2>
-          <ul className="list-disc ml-6">
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto p-8 mt-10 bg-white shadow-xl rounded-2xl border border-gray-200">
+        {/* 1. Order Cancellation */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">1. Order Cancellation</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
             <li>
-              <strong>Course Subscription Cancellation:</strong> We doesnt
-              provide the features to cancel the course subscription once buyed.
+              <strong>Pre-Shipment Cancellation:</strong> If your order has not yet been
+              shipped, you may request cancellation by contacting our support team as soon
+              as possible.
             </li>
             <li>
-              <strong>Immediate Cancellation:</strong> If you Immediatily want
-              to cancel the subscription after payment you can contact us on
-              support number and email for that.
+              <strong>Post-Shipment Cancellation:</strong> Once your order has been shipped,
+              it cannot be cancelled. You may, however, initiate a return after delivery
+              (subject to our return policy).
             </li>
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">2. Refund Policy</h2>
-          <ul className="list-disc ml-6">
+        {/* 2. Refund Policy */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">2. Refund Policy</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
             <li>
-              <strong>Eligibility for Refund:</strong> Refunds are generally not
-              provided for subscription fees. However, if you believe there has
-              been an error in billing or if you experience technical issues
-              that prevent you from using the app's features, please contact our
-              support team at{" "}
-              <a
-                href="mailto:theanuragchaturvedi@gmail.com"
-                className="text-blue-500 underline"
-              >
-                theanuragchaturvedi@gmail.com
-              </a>{" "}
-              within 7 days of the charge.
+              <strong>Eligibility:</strong> Refunds are applicable only for orders that are
+              cancelled before shipment or returned as per our return policy.
             </li>
-            {/* <li>
-              <strong>Pro-Rated Refunds:</strong> In rare cases where a refund
-              is approved, Star Kid may issue a pro-rated refund based on the
-              unused portion of your subscription. This will be determined at
-              our sole discretion.
-            </li> */}
             <li>
-              <strong>Ineligibility for Refunds:</strong> No refunds will be
-              issued for subscriptions that have been used or partially used.
+              <strong>Damaged or Wrong Products:</strong> If you receive a damaged or
+              incorrect product, please notify us within 48 hours of delivery with photo
+              evidence.
+            </li>
+            <li>
+              <strong>Refund Process:</strong> Once approved, refunds will be processed to
+              your original payment method within 5–7 business days.
+            </li>
+            <li>
+              <strong>Ineligibility:</strong> Used products, opened supplement containers,
+              and items returned after 7 days of delivery are not eligible for refunds.
             </li>
           </ul>
         </section>
 
-        {/* <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            3. How to Cancel Your Subscription
+        {/* 3. How to Request Cancellation/Refund */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">
+            3. How to Request a Cancellation or Refund
           </h2>
-          <ul className="list-disc ml-6">
+          <p className="text-gray-700 leading-relaxed mb-2">
+            You can initiate a refund or cancellation request by contacting our support team
+            at:
+          </p>
+          <ul className="ml-6 text-gray-700">
             <li>
-              <strong>Account Settings:</strong> You can cancel your
-              subscription by logging into your Star Kid account and navigating
-              to the subscription management section under account settings.
-            </li>
-            <li>
-              <strong>Contacting Support:</strong> If you encounter any issues
-              while canceling your subscription, please contact our customer
-              support at{" "}
+              📧 Email:{" "}
               <a
-                href="mailto:contact@eduexplore.in"
-                className="text-blue-500 underline"
+                href="mailto:support@muscledecode.com"
+                className="text-blue-600 underline font-medium"
               >
-                contact@eduexplore.in
-              </a>{" "}
-              for assistance.
+                support@muscledecode.com
+              </a>
             </li>
+            <li>📞 Phone: +91-XXXXXXXXXX (Customer Support)</li>
           </ul>
-        </section> */}
+        </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
+        {/* 4. Policy Changes */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">
             4. Changes to This Policy
           </h2>
-          <p>
-            We reserves the right to modify this refund and cancellation policy
-            at any time. Any changes will be posted on this page, and your
-            continued use of the app after such changes indicates your
-            acceptance of the updated policy.
+          <p className="text-gray-700 leading-relaxed">
+            Muscle Decode reserves the right to revise this Refund & Cancellation Policy at
+            any time. Updates will be posted on this page, and your continued use of the
+            site constitutes acceptance of the changes.
           </p>
         </section>
       </div>
+
       {/* <MainFooter />
       <div className="h-10 mt-10"></div>
       <Footer /> */}

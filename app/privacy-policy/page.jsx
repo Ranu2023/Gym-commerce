@@ -1,146 +1,106 @@
-// import Footer from "@/components/HomePageComponent/Footer";
-// import MainFooter from "@/components/MainFooter";
-// import Navbar from "@/components/Navbar";
 import React from "react";
+
 function page() {
   return (
     <>
-      {/* //<Navbar /> */}
+      {/* Header */}
+      <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-12 text-center">
+        <h1 className="text-4xl font-bold">Privacy Policy</h1>
+        <p className="mt-2 text-lg">Your data safety matters at Muscle Decode</p>
+      </div>
 
-      <div className="p-8">
-        <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
-          <p>
-            Welcome to the RJ Manish website! We are committed to protecting
-            your personal data and privacy. This Privacy Policy explains how we
-            collect, use, and safeguard your information when you use our app.
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto p-8 mt-10 bg-white shadow-xl rounded-2xl border border-gray-200">
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">1. Introduction</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Welcome to <strong>Muscle Decode</strong>! We are committed to protecting your
+            personal information and ensuring a secure online shopping experience. This
+            Privacy Policy explains how we collect, use, and protect your data when you use
+            our website to explore and purchase fitness supplements.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            2. Information We Collect
-          </h2>
-          <ul className="list-disc ml-6">
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">2. Information We Collect</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
             <li>
-              <strong>Personal Information:</strong> When you register on our
-              webiste, we may collect personal information such as your name,
-              email address, phone number, and other contact details.
+              <strong>Personal Information:</strong> Name, email, address, contact number, and payment info.
             </li>
             {/* <li>
-              <strong>Usage Data:</strong> We collect information about your
-              interactions with the app, including pages visited, features used,
-              and the time spent on the app.
-            </li>
-            <li>
-              <strong>Content Submissions:</strong> If you submit content (e.g.,
-              photos, videos) to participate in competitions, we collect and
-              store that content.
+              <strong>Usage Data:</strong> Pages visited, search history, and clicks for personalization.
             </li> */}
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            3. How We Use Your Information
-          </h2>
-          <ul className="list-disc ml-6">
-            <li>
-              <strong>Personalization:</strong> To personalize your experience
-              and provide content tailored to your interests.
-            </li>
-            <li>
-              <strong>Service Improvement:</strong> To improve our website
-              functionality, usability, and user experience.
-            </li>
-            <li>
-              <strong>Communication:</strong> To send you notifications,
-              updates, and information about your account and our services.
-            </li>
-            {/* <li>
-              <strong>Competition Management:</strong> To manage and evaluate
-              entries in competitions and to provide feedback.
-            </li> */}
-            <li>
-              <strong>Security:</strong> To ensure the security and integrity of
-              our webiste and user data.
-            </li>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">3. How We Use Your Information</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
+            <li><strong>Order Processing:</strong> Managing purchases and delivery.</li>
+            <li><strong>Personalization:</strong> Displaying relevant products and offers.</li>
+            <li><strong>Communication:</strong> Order updates, promotional emails, and alerts.</li>
+            <li><strong>Security:</strong> Safeguarding your information and preventing fraud.</li>
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            4. Sharing Your Information
-          </h2>
-          <ul className="list-disc ml-6">
-            <li>
-              <strong>Third-Party Services:</strong> We may share your
-              information with third-party service providers who assist us in
-              operating our website, conducting our business, or serving our
-              users.
-            </li>
-            <li>
-              <strong>Legal Requirements:</strong> We may disclose your
-              information if required to do so by law or in response to valid
-              requests by public authorities.
-            </li>
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">4. Sharing Your Information</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
+            <li><strong>Third-Party Services:</strong> Delivery partners, payment processors.</li>
+            <li><strong>Legal Compliance:</strong> When required by law or regulatory bodies.</li>
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">5. Data Security</h2>
-          <p>
-            We take reasonable measures to protect your personal information
-            from unauthorized access, alteration, disclosure, or destruction.
-            However, no method of transmission over the internet or method of
-            electronic storage is 100% secure.
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">5. Data Security</h2>
+          <p className="text-gray-700 leading-relaxed">
+            We implement encryption, secure servers, and monitoring to protect your data.
+            However, no method of digital storage is completely secure.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">6. Your Rights</h2>
-          <p>
-            <strong>Access and Correction:</strong> You have the right to
-            access, correct, or delete your personal information stored in our
-            webiste.
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">6. Your Rights</h2>
+          <p className="text-gray-700 leading-relaxed">
+            You may view, update, or delete your data by contacting us or via your account
+            settings.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            7. Changes to This Privacy Policy
-          </h2>
-          <p>
-            We may update this Privacy Policy from time to time. We will notify
-            you of any changes by posting the new Privacy Policy on this page
-            and updating the "Last Updated" date.
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">7. Changes to This Policy</h2>
+          <p className="text-gray-700 leading-relaxed">
+            We may update our Privacy Policy and will notify you by updating the “Last
+            Updated” date and posting it on our site.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
-          <p>
-            If you have any questions or concerns about this Privacy Policy,
-            please contact us at{" "}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">8. Contact Us</h2>
+          <p className="text-gray-700 leading-relaxed">
+            For questions or concerns, reach out to us at{" "}
             <a
-              href="mailto:theanuragchaturvedi@gmail.com"
-              className="text-blue-500 underline"
+              href="mailto:support@muscledecode.com"
+              className="text-blue-600 underline font-medium"
             >
-              support@demo.com
+              support@muscledecode.com
             </a>
             .
           </p>
         </section>
 
-        <h1 className="text-3xl font-bold mb-6">Account Deletion</h1>
-        <p>
-          If you wish to delete your account, you can email us at
-          theanuragchaturvedi@gmail.com and mention your registration details.
-        </p>
+        <section className="mt-10">
+          <h2 className="text-2xl font-semibold mb-3 text-blue-700">Account Deletion</h2>
+          <p className="text-gray-700 leading-relaxed">
+            If you would like to permanently delete your Muscle Decode account and associated
+            data, please email us at{" "}
+            <strong className="text-blue-700">support@muscledecode.com</strong> with your
+            registered email and order information.
+          </p>
+        </section>
       </div>
 
+      {/* Optional Footer */}
       {/* <MainFooter />
       <div className="h-10 my-5"></div>
       <Footer /> */}

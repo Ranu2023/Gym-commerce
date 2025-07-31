@@ -1,166 +1,114 @@
-// import Footer from "@/components/HomePageComponent/Footer";
-// import MainFooter from "@/components/MainFooter";
-// import Navbar from "@/components/Navbar";";
-
-function page() {
+function Page() {
   return (
     <>
       {/* <Navbar /> */}
-      <div className="p-8">
-        <h1 className="text-3xl font-bold mb-6">Terms and Conditions</h1>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
-          <p>
-            Welcome to the RJ Manish website! By accessing or using our website,
-            you agree to comply with and be bound by the following terms and
-            conditions. Please read them carefully. If you do not agree to these
-            terms, please do not use the app.
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-indigo-800 to-indigo-600 text-white py-12 text-center">
+        <h1 className="text-4xl font-bold">Terms and Conditions</h1>
+        <p className="mt-2 text-lg">Please read our policies before shopping with us</p>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto p-8 mt-10 bg-white shadow-xl rounded-2xl border border-gray-200">
+        {/* 1. Introduction */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">1. Introduction</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Welcome to the Anurag chaturvedi Muscle Decode website. By using this platform to purchase fitness or health-related products, you agree to the following Terms and Conditions. If you do not accept these terms, please refrain from using our services.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">2. Use of the Website</h2>
-          <ul className="list-disc ml-6">
-            <li>
-              <strong>Account Registration:</strong> To access certain features,
-              you may be required to create an account. You agree to provide
-              accurate, current, and complete information during the
-              registration process and to update such information as necessary.
-            </li>
-            {/* <li>
-              <strong>User Content:</strong> You are responsible for any content
-              you submit or upload to the app, including but not limited to
-              photos, videos, and text. You grant Star Kid a non-exclusive,
-              royalty-free, perpetual license to use, reproduce, modify, and
-              display such content.
-            </li> */}
+        {/* 2. Use of Website */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">2. Use of the Website</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
+            <li>You must be at least 18 years old to place an order.</li>
+            <li>You agree to provide accurate, up-to-date information during checkout.</li>
+            <li>All personal and payment details are processed securely and confidentially.</li>
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            3. Subscription and Payment
-          </h2>
-          <ul className="list-disc ml-6">
-            <li>
-              <strong>Subscription Plans:</strong> Our Website offers various
-              subscription plans for various courses. By subscribing, you agree
-              to pay the applicable subscription fees.
-            </li>
-            <li>
-              <strong>Payment Terms:</strong> Subscription fees are taken once
-              when you buy the particular course. All payments are
-              non-refundable.
-            </li>
-            {/* <li>
-              <strong>Automatic Renewal:</strong> Your subscription will
-              automatically renew at the end of each billing cycle unless you
-              cancel it before the renewal date. You may cancel your
-              subscription at any time through your account settings.
-            </li> */}
-            <li>
-              <strong>Cancellation:</strong> Once subscribed you cannot cancel
-              your subscription.
-            </li>
+        {/* 3. Orders and Payments */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">3. Orders and Payments</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
+            <li>All orders are subject to availability and confirmation of payment.</li>
+            <li>Prices are listed in INR and are inclusive of applicable taxes unless otherwise stated.</li>
+            <li>Payments are processed via secure third-party payment gateways.</li>
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">4. User Conduct</h2>
-          <ul className="list-disc ml-6">
-            <li>
-              <strong>Prohibited Activities:</strong> You agree not to engage in
-              any activities that violate these terms or applicable laws,
-              including but not limited to the following:
-            </li>
-            <ul className="list-disc ml-10">
-              <li>
-                Hacking, cracking, or circumventing any security features of the
-                app.
-              </li>
-              <li>Harassing, threatening, or defaming other users.</li>
-              {/* <li>
-                Uploading content that is illegal, obscene, or infringing on
-                intellectual property rights.
-              </li> */}
-            </ul>
-            <li>
-              <strong>Termination:</strong> We reserve the right to terminate or
-              suspend your account if you violate these terms or engage in any
-              prohibited activities.
-            </li>
+        {/* 4. Shipping and Delivery */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">4. Shipping and Delivery</h2>
+          <p className="text-gray-700 leading-relaxed mb-2">
+            We deliver across India using reliable third-party logistics partners such as <strong>Shiprocket</strong>.
+          </p>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
+            <li>Orders are typically shipped within 1–2 business days after confirmation.</li>
+            <li>Delivery time is estimated between 3–7 business days based on your location.</li>
+            <li>Tracking information will be shared via email or SMS.</li>
           </ul>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            5. Intellectual Property
-          </h2>
-          <p>
-            <strong>Ownership:</strong> RJ Manish and its content, features, and
-            functionality are the exclusive property of RJ Manish or its
-            licensors. You agree not to reproduce, duplicate, copy, sell, or
-            exploit any portion of the app without express written permission
-            from RJ Manish.
+        {/* 5. Returns and Refunds */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">5. Returns and Refunds</h2>
+          <ul className="list-disc ml-6 text-gray-700 leading-relaxed">
+            <li>We do not accept returns on opened or used supplements due to health & safety reasons.</li>
+            <li>Returns are only accepted for damaged, defective, or incorrectly shipped products.</li>
+            <li>Refunds will be processed to the original payment method within 7 business days of return approval.</li>
+          </ul>
+        </section>
+
+        {/* 6. Health Disclaimer */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">6. Health Disclaimer</h2>
+          <p className="text-gray-700 leading-relaxed">
+            All supplements sold on this site are intended for adults and should be used under guidance from a certified healthcare provider or fitness professional. Anurag chaturvedi is not responsible for any adverse reactions or misuse of products.
           </p>
         </section>
 
-        {/* <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            6. Limitation of Liability
-          </h2>
-          <ul className="list-disc ml-6">
-            <li>
-              <strong>No Warranties:</strong> The app is provided on an "as is"
-              and "as available" basis. Star Kid makes no warranties, whether
-              express or implied, regarding the app's functionality,
-              availability, or accuracy.
-            </li>
-            <li>
-              <strong>Limitation of Liability:</strong> In no event shall Star
-              Kid be liable for any indirect, incidental, special,
-              consequential, or punitive damages arising out of or related to
-              your use of the app, even if we have been advised of the
-              possibility of such damages.
-            </li>
-          </ul>
-        </section> */}
-
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">6. Governing Law</h2>
-          <p>
-            These terms shall be governed by and construed in accordance with
-            the laws of India, without regard to its conflict of law provisions.
+        {/* 7. Intellectual Property */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">7. Intellectual Property</h2>
+          <p className="text-gray-700 leading-relaxed">
+            All branding, content, product images, and trademarks belong to Anurag chaturvedi and cannot be reused without permission.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">
-            7. Changes to These Terms
-          </h2>
-          <p>
-            We may update these terms from time to time. When we do, we will
-            revise the "Last Updated" date at the bottom of this page. Your
-            continued use of the app after any changes indicates your acceptance
-            of the new terms.
+        {/* 8. Legal Jurisdiction */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">8. Governing Law</h2>
+          <p className="text-gray-700 leading-relaxed">
+            These Terms are governed by the laws of India. All disputes shall be subject to the exclusive jurisdiction of courts located in India.
           </p>
         </section>
 
-        <section className="mb-6">
-          <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
-          <p>
-            If you have any questions about these terms, please contact us at{" "}
+        {/* 9. Changes to Terms */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">9. Changes to These Terms</h2>
+          <p className="text-gray-700 leading-relaxed">
+            We reserve the right to modify or update these Terms and Conditions at any time without prior notice.
+          </p>
+        </section>
+
+        {/* 10. Contact Us */}
+        <section className="mb-2">
+          <h2 className="text-2xl font-semibold mb-3 text-indigo-700">10. Contact Us</h2>
+          <p className="text-gray-700 leading-relaxed">
+            For any questions regarding these terms, please contact us at{" "}
             <a
               href="mailto:theanuragchaturvedi@gmail.com"
-              className="text-blue-500 underline"
+              className="text-indigo-600 underline"
             >
               theanuragchaturvedi@gmail.com
-            </a>
-            .
+            </a>.
           </p>
         </section>
       </div>
+
       {/* <MainFooter />
       <div className="h-10 mt-10"></div>
       <Footer /> */}
@@ -168,4 +116,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

@@ -11,21 +11,20 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/about" className="hover:underline text-gray-300">
-                  About Us
-                </Link>
-              </li>
+            <Link href="/about" className="hover:underline text-gray-300">
+  About Us
+</Link>
+
               <li>
                 <Link href="/contact" className="hover:underline text-gray-300">
                   Contact
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/careers" className="hover:underline text-gray-300">
                   Careers
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -43,10 +42,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/refund-cancellation"
+                  className="hover:underline text-gray-300"
+                >
+                  Refund-cancellation
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/terms-and-conditions"
                   className="hover:underline text-gray-300"
                 >
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/shipping-delivery"
+                  className="hover:underline text-gray-300"
+                >
+                  shipping-delivery
                 </Link>
               </li>
             </ul>
@@ -69,14 +84,14 @@ export default function Footer() {
                   Support
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="hover:underline text-gray-300"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

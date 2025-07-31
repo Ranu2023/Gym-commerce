@@ -31,9 +31,6 @@ export default function HomePage() {
       image: "/Banner1.mp4",
     },
     {
-      image: "/Banner2.mp4",
-    },
-    {
       image: "/Banner3.mp4",
     },
     {
@@ -50,7 +47,7 @@ export default function HomePage() {
       role: "Professional Bodybuilder",
       image: "/placeholder.svg?height=80&width=80&text=RS",
       quote:
-        "FitSupp has been my go-to supplement brand for 3 years. The quality is unmatched and results speak for themselves.",
+        "Muscle Decode has been my go-to supplement brand for 3 years. The quality is unmatched and results speak for themselves.",
       rating: 5,
     },
     {
@@ -66,7 +63,7 @@ export default function HomePage() {
       role: "Personal Trainer",
       image: "/placeholder.svg?height=80&width=80&text=AS",
       quote:
-        "I recommend FitSupp to all my clients. Premium quality supplements at affordable prices. Highly satisfied!",
+        "I recommend Muscle Decode to all my clients. Premium quality supplements at affordable prices. Highly satisfied!",
       rating: 5,
     },
   ];
@@ -212,7 +209,7 @@ export default function HomePage() {
       <section className="py-16 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gradient-primary mb-4">
+            <h2 className="text-3xl font-bold text-gradient-primary mb-4">
               Featured Products
             </h2>
             <p className="text-xl text-gray-600">
@@ -271,7 +268,7 @@ export default function HomePage() {
       </section>
 
       {/* Special Offer Banner */}
-      <section className="py-8 bg-gradient-cta relative z-10">
+      {/* <section className="py-8 bg-gradient-cta relative z-10">
         <div className="container mx-auto px-4 text-center">
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
             <div className="text-white">
@@ -288,14 +285,14 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Benefits Section */}
       <section className="py-16 bg-gray-200 relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gradient-secondary mb-4">
-              Why Choose FitSupp?
+              Why Choose Muscle Decode?
             </h2>
             <p className="text-xl text-gray-600">
               Your trusted partner in fitness nutrition

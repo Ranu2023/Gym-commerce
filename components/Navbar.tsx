@@ -58,61 +58,61 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-[#0d1b2a] via-[#1b263b] to-[#e5e7eb] text-gray-900 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/logo.png"
+              src="/logo-2.png"
               alt="Logo"
-              width={40}
-              height={40}
+              width={130}
+              height={130}
               className="h-15 w-15"
+              priority
             />
+            <span className="text-xl font-bold text-white hidden sm:inline">
+              MUSCLE DECODE
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
+          <div className="hidden md:flex items-center space-x-8 text-gray-900 font-medium">
+            <Link href="/" className="hover:text-blue-600 transition-colors">
               Home
             </Link>
             <Link
               href="/products"
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               Products
             </Link>
 
             {user ? (
               <div className="flex items-center space-x-4">
-                {/* Role-based navigation */}
                 {user.role === "admin" && (
-                  <div className="flex items-center space-x-4">
+                  <>
                     <Link
                       href="/admin"
-                      className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="flex items-center space-x-1 hover:text-blue-600"
                     >
                       <Shield className="h-4 w-4" />
                       <span>Admin</span>
                     </Link>
                     <Link
                       href="/admin/orders"
-                      className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="flex items-center space-x-1 hover:text-blue-600"
                     >
                       <Package className="h-4 w-4" />
                       <span>Orders</span>
                     </Link>
-                  </div>
+                  </>
                 )}
 
                 {user.role === "delivery" && (
                   <Link
                     href="/delivery"
-                    className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors"
+                    className="flex items-center space-x-1 hover:text-blue-600"
                   >
                     <Truck className="h-4 w-4" />
                     <span>Delivery</span>
@@ -122,7 +122,7 @@ export default function Navbar() {
                 {user.role === "user" && (
                   <Link
                     href="/cart"
-                    className="relative text-gray-700 hover:text-blue-600 transition-colors"
+                    className="relative hover:text-blue-600"
                   >
                     <ShoppingCart className="h-6 w-6" />
                     {cartCount > 0 && (
@@ -134,7 +134,7 @@ export default function Navbar() {
                 )}
 
                 <div className="relative group">
-                  <button className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 transition-colors">
+                  <button className="flex items-center space-x-1 hover:text-blue-600">
                     <User className="h-5 w-5" />
                     <span>{user.name}</span>
                   </button>
@@ -158,7 +158,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-4">
                 <Link
                   href="/login"
-                  className="text-gray-700 hover:text-blue-600 transition-colors"
+                  className="hover:text-blue-600 transition-colors"
                 >
                   Login
                 </Link>
@@ -176,7 +176,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-gray-900 hover:text-blue-600 transition-colors"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -190,17 +190,17 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
               <Link
                 href="/"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/products"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Products
@@ -208,19 +208,18 @@ export default function Navbar() {
 
               {user ? (
                 <>
-                  {/* Role-based mobile navigation */}
                   {user.role === "admin" && (
                     <>
                       <Link
                         href="/admin"
-                        className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                        className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Admin Panel
                       </Link>
                       <Link
                         href="/admin/orders"
-                        className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                        className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Manage Orders
@@ -231,7 +230,7 @@ export default function Navbar() {
                   {user.role === "delivery" && (
                     <Link
                       href="/delivery"
-                      className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Delivery Dashboard
@@ -241,7 +240,7 @@ export default function Navbar() {
                   {user.role === "user" && (
                     <Link
                       href="/cart"
-                      className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                      className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       Cart ({cartCount})
@@ -250,7 +249,7 @@ export default function Navbar() {
 
                   <Link
                     href="/profile"
-                    className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                    className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Profile
@@ -260,7 +259,7 @@ export default function Navbar() {
                       handleLogout();
                       setIsMenuOpen(false);
                     }}
-                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600"
                   >
                     Logout
                   </button>
@@ -269,14 +268,14 @@ export default function Navbar() {
                 <>
                   <Link
                     href="/login"
-                    className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                    className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Login
                   </Link>
                   <Link
                     href="/register"
-                    className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors"
+                    className="block px-3 py-2 text-gray-700 hover:text-blue-600"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Register
