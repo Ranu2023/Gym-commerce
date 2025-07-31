@@ -526,13 +526,13 @@ export default function CartPage() {
                   <div className="flex justify-between">
                     <span className="text-gray-600">Subtotal</span>
                     <span className="font-medium">
-                      ${calculateSubtotal().toFixed(2)}
+                      ₹{calculateSubtotal().toFixed(2)}
                     </span>
                   </div>
                   {appliedCoupon && (
                     <div className="flex justify-between text-green-600">
                       <span>Discount ({appliedCoupon?.discount}%)</span>
-                      <span>-${calculateDiscount().toFixed(2)}</span>
+                      <span>-₹{calculateDiscount().toFixed(2)}</span>
                     </div>
                   )}
                   <div className="flex justify-between">
@@ -543,7 +543,7 @@ export default function CartPage() {
                     <div className="flex justify-between text-lg font-bold">
                       <span>Total</span>
                       <span className="text-blue-600">
-                        ${calculateTotal().toFixed(2)}
+                        ₹{calculateTotal().toFixed(2)}
                       </span>
                     </div>
                   </div>

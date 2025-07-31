@@ -584,6 +584,7 @@ export default function ProductCard({
                   {product?.description}
                 </p>
                 <div className="flex items-center gap-4 mb-3">
+                  <span className="line-through text-gray-500">₹ 799</span>
                   <span className="text-2xl font-bold text-blue-600">
                     ₹ {(product?.price || 0).toFixed(2)}
                   </span>
@@ -693,9 +694,13 @@ export default function ProductCard({
         </p>
 
         <div className="flex-col md:flex items-center justify-between mb-3">
-          <span className="text-2xl font-bold text-blue-600">
-            ₹ {(product?.price || 0).toFixed(2)}
-          </span>
+          <div className="flex gap-2 items-center justify-center ">
+            <span className="text-2xl font-bold text-blue-600">
+              ₹ {(product?.price || 0).toFixed(2)}
+            </span>
+            <span className="line-through text-gray-500">₹ 799</span>
+          </div>
+
           <div className="flex items-center space-x-2">
             <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
               {product?.category}

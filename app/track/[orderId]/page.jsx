@@ -625,11 +625,11 @@ export default function OrderTrackingPage() {
             </div>
             <div className="mt-4 lg:mt-0 text-right">
               <div className="text-2xl font-bold text-gray-900">
-                ${order.totalAmount.toFixed(2)}
+                ₹ {order.totalAmount.toFixed(2)}
               </div>
               {order.discountAmount > 0 && (
                 <div className="text-sm text-green-600">
-                  Saved ${order.discountAmount.toFixed(2)}
+                  Saved ₹ {order.discountAmount.toFixed(2)}
                 </div>
               )}
             </div>
@@ -829,7 +829,7 @@ export default function OrderTrackingPage() {
                         {item.product.name}
                       </p>
                       <p className="text-sm text-gray-500">
-                        Qty: {item.quantity} × ${item.product.price.toFixed(2)}
+                        Qty: {item.quantity} × ₹ {item.product.price.toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -857,7 +857,7 @@ export default function OrderTrackingPage() {
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Subtotal</span>
                   <span className="text-gray-900">
-                    ${(order.totalAmount + order.discountAmount).toFixed(2)}
+                    ₹ {(order.totalAmount + order.discountAmount).toFixed(2)}
                   </span>
                 </div>
                 {order.discountAmount > 0 && (
@@ -866,7 +866,7 @@ export default function OrderTrackingPage() {
                       Discount ({order.couponCode})
                     </span>
                     <span className="text-green-600">
-                      -${order.discountAmount.toFixed(2)}
+                      -₹{order.discountAmount.toFixed(2)}
                     </span>
                   </div>
                 )}
@@ -878,7 +878,7 @@ export default function OrderTrackingPage() {
                   <div className="flex justify-between font-semibold">
                     <span className="text-gray-900">Total</span>
                     <span className="text-gray-900">
-                      ${order?.totalAmount.toFixed(2)}
+                      ₹ {order?.totalAmount.toFixed(2)}
                     </span>
                   </div>
                 </div>

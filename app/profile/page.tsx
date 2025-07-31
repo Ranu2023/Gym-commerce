@@ -452,7 +452,7 @@ export default function ProfilePage() {
                           </p>
                           {order.discountAmount > 0 && (
                             <p className="text-sm text-green-600">
-                              Saved ${order.discountAmount.toFixed(2)}
+                              Saved ₹ {order.discountAmount.toFixed(2)}
                             </p>
                           )}
                           <p className="text-sm text-gray-500">
