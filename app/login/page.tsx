@@ -32,7 +32,7 @@ export default function LoginPage() {
     setError("");
 
     try {
-      const response = await api.post("api/auth/login", formData);
+      const response = await api.post("/auth/login", formData);
 
       if (response.data.success) {
         localStorage.setItem("token", response.data.data.token);
