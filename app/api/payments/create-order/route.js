@@ -704,7 +704,8 @@ export async function POST(request) {
             customer_name: dbUser?.name || "Customer",
           },
           order_meta: {
-            notify_url: "https://gym-commerce.vercel.app/api/payments/webhook",
+            notify_url:
+              "https://gym-commerce-five.vercel.app/api/payments/webhook",
             payment_methods: "cc,dc,upi",
           },
           order_tags: {
