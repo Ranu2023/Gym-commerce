@@ -68,13 +68,14 @@ function page() {
             <li>
               📧 Email:{" "}
               <a
-                href="mailto:support@muscledecode.com"
+                href="mailto: muscledecode7@gmail.com 
+"
                 className="text-blue-600 underline font-medium"
               >
-                support@muscledecode.com
+                 muscledecode7@gmail.com 
               </a>
             </li>
-            <li>📞 Phone: +91-XXXXXXXXXX (Customer Support)</li>
+            <li>📞 Phone: +91-8626055399 (Customer Support)</li>
           </ul>
         </section>
 

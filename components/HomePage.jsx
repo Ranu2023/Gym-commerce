@@ -43,27 +43,27 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      name: "Rahul Sharma",
+      name: "Aman Gupta",
       role: "Professional Bodybuilder",
-      image: "/placeholder.svg?height=80&width=80&text=RS",
+      // image: "/placeholder.svg?height=80&width=80&text=RS",
       quote:
-        "Muscle Decode has been my go-to supplement brand for 3 years. The quality is unmatched and results speak for themselves.",
+        "Mixes well in cold as well as warm water. Overpriced a little but giving quality at its best. Tastes well enough to crave more n more. Go for it as results are quite good. No digestive issues faced optimum sugar content.",
       rating: 5,
     },
     {
-      name: "Priya Patel",
+      name: "Ridhima",
       role: "Fitness Enthusiast",
-      image: "/placeholder.svg?height=80&width=80&text=PP",
+      // image: "/placeholder.svg?height=80&width=80&text=PP",
       quote:
-        "Amazing products with fast delivery. Their whey protein helped me achieve my fitness goals faster than expected.",
+        "Easily soluble. And effective. Its my first time using this product. And am happy with it.",
       rating: 5,
     },
     {
-      name: "Arjun Singh",
+      name: "Mayank jadhav",
       role: "Personal Trainer",
-      image: "/placeholder.svg?height=80&width=80&text=AS",
+      // image: "/placeholder.svg?height=80&width=80&text=AS",
       quote:
-        "I recommend Muscle Decode to all my clients. Premium quality supplements at affordable prices. Highly satisfied!",
+        "The packaging was good, one thing a like the most that they provide a code to check whether the product is authenticated or not.",
       rating: 5,
     },
   ];

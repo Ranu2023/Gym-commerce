@@ -11,18 +11,19 @@ export default function Contact() {
         <div>
           <h2 className="text-2xl font-semibold text-blue-800 mb-4">Get in Touch</h2>
           <ul className="text-gray-700 space-y-3">
-            <li><strong>Email:</strong> support@muscledecode.com</li>
-            <li><strong>Phone:</strong> +91-99999-99999</li>
-            <li><strong>Customer Support:</strong> Mon - Sat (9AM - 6PM)</li>
-            <li><strong>Address:</strong> 123 Muscle Street, Fit City, India - 400001</li>
+            <li><strong>Email:</strong> muscledecode7@gmail.com</li>
+            <li><strong>Phone:</strong> +91-86260-55399
+            </li>
+            <li><strong>Customer Support:</strong> Mon - Sat (11AM - 6PM)</li>
+            <li><strong>Address:</strong> Mumbai Maharashtra 400097</li>
           </ul>
 
-          <h2 className="text-2xl font-semibold text-blue-800 mt-8 mb-4">Follow Us</h2>
+          {/* <h2 className="text-2xl font-semibold text-blue-800 mt-8 mb-4">Follow Us</h2>
           <div className="flex space-x-4 text-blue-600">
             <a href="#" className="hover:underline">Instagram</a>
             <a href="#" className="hover:underline">Facebook</a>
             <a href="#" className="hover:underline">Twitter</a>
-          </div>
+          </div> */}
         </div>
 
         {/* Contact Form */}

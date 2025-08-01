@@ -100,10 +100,10 @@ function Page() {
           <p className="text-gray-700 leading-relaxed">
             For any questions regarding these terms, please contact us at{" "}
             <a
-              href="mailto:theanuragchaturvedi@gmail.com"
+              href="mailto:muscledecode7@gmail.com"
               className="text-indigo-600 underline"
             >
-              theanuragchaturvedi@gmail.com
+              muscledecode7@gmail.com
             </a>.
           </p>
         </section>

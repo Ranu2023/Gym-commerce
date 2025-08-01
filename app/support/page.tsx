@@ -17,9 +17,9 @@ export default function Support() {
             <p className="text-gray-700">
               Reach us via phone for quick help:
               <br />
-              <strong>+91 98765 43210</strong>
+              <strong>+91 86260-55399</strong>
               <br />
-              Mon - Sat | 9 AM - 6 PM
+              Mon - Sat | 11 AM - 6 PM
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function Support() {
             <p className="text-gray-700">
               For detailed queries or issues, email us at:
               <br />
-              <strong>support@yourbrand.com</strong>
+              <strong>muscledecode7@gmail.com</strong>
               <br />
               We usually respond within 24 hours.
             </p>

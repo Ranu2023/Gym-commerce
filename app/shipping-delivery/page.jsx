@@ -39,7 +39,7 @@ function Page() {
 
           <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-2">Need Assistance?</h2>
           <p>
-            For any shipping-related queries, please contact our customer support at <a href="mailto:support@example.com" className="text-blue-600 hover:underline">support@example.com</a>.
+            For any shipping-related queries, please contact our customer support at <a href="mailto:muscledecode7@gmail.com" className="text-blue-600 hover:underline">muscledecode7@gmail.com</a>.
           </p>
         </section>
       </div>

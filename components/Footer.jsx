@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
 
           {/* Social or Branding */}
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
             <ul className="space-y-2 text-sm">
               <li>
@@ -130,11 +130,11 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} YourCompany. All rights reserved.
+          &copy; {new Date().getFullYear()} MUSCLE DECODE. All rights reserved
         </div>
       </div>
     </footer>

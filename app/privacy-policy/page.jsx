@@ -80,10 +80,11 @@ function page() {
           <p className="text-gray-700 leading-relaxed">
             For questions or concerns, reach out to us at{" "}
             <a
-              href="mailto:support@muscledecode.com"
+              href="mailto: muscledecode7@gmail.com"
               className="text-blue-600 underline font-medium"
             >
-              support@muscledecode.com
+               muscledecode7@gmail.com 
+
             </a>
             .
           </p>
@@ -94,7 +95,8 @@ function page() {
           <p className="text-gray-700 leading-relaxed">
             If you would like to permanently delete your Muscle Decode account and associated
             data, please email us at{" "}
-            <strong className="text-blue-700">support@muscledecode.com</strong> with your
+            <strong className="text-blue-700"> muscledecode7@gmail.com 
+            </strong> with your
             registered email and order information.
           </p>
         </section>
