@@ -585,7 +585,7 @@ export default function ProductCard({
                 </p>
                 <div className="flex items-center gap-4 mb-3">
                   <span className="text-2xl font-bold text-blue-600">
-                    ₹ {(product?.price || 0).toFixed(2)}
+                    799 ₹ {(product?.price || 0).toFixed(2)}
                   </span>
                   <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
                     {product?.category}
@@ -740,8 +740,8 @@ export default function ProductCard({
             {isLoading
               ? "Adding..."
               : isOutOfStock
-              ? "Out of Stock"
-              : "Add to Cart"}
+                ? "Out of Stock"
+                : "Add to Cart"}
           </span>
         </button>
       </div>
