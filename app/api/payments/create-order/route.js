@@ -705,7 +705,7 @@ export async function POST(request) {
           },
           order_meta: {
             notify_url:
-              "https://gym-commerce-five.vercel.app/api/payments/webhook",
+              "https://www.muscledecode.in/api/payments/webhook",
             payment_methods: "cc,dc,upi",
           },
           order_tags: {

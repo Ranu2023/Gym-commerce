@@ -194,7 +194,7 @@ export default function CartPage() {
 
         const checkoutOptions = {
           paymentSessionId: sessionId,
-          returnUrl: `https://gym-commerce-five.vercel.app/payment/success?order_id=${orderId}`,
+          returnUrl: `https://www.muscledecode.in/payment/success?order_id=${orderId}`,
           // returnUrl: `https://gym-commerce.vercel.app/profile`,
         };
 
