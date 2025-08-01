@@ -8,12 +8,11 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GymSupplements - Premium Fitness Supplements",
+  title: "Muscle Decode - Premium Fitness Supplements",
   description:
     "Premium gym supplements to help you achieve your fitness goals. Quality products, expert guidance, and fast delivery.",
   keywords:
-    "gym supplements, protein powder, creatine, pre-workout, fitness nutrition",
-  generator: "v0.dev",
+    "gym supplements, protein powder, creatine, pre-workout, fitness nutrition ,muscledecode, Muscle Decode",
 };
 
 export default function RootLayout({

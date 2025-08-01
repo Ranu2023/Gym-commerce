@@ -171,7 +171,7 @@ export default function PaymentSuccessPage() {
                       </p>
                     </div>
                     <div className="text-sm font-medium text-gray-900">
-                      $
+                      ₹
                       {(
                         (item?.product?.price || 0) * (item?.quantity || 0)
                       ).toFixed(2)}

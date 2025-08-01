@@ -640,7 +640,10 @@ export default function ProductDetailPage() {
                   <span className="text-gray-600">(4.8) • 127 reviews</span>
                 </div>
                 <p className="text-4xl font-bold text-blue-600 mb-6">
-                  ₹ {(product?.price || 0).toFixed(2)}
+                  ₹ {(product?.price || 0).toFixed(2)}{" "}
+                  <span className="line-through text-gray-500 text-xl">
+                    ₹ 799
+                  </span>
                 </p>
               </div>
 
@@ -771,7 +774,10 @@ export default function ProductDetailPage() {
                       {relatedProduct?.name}
                     </h3>
                     <p className="text-2xl font-bold text-blue-600">
-                      ₹ {(relatedProduct?.price || 0).toFixed(2)}
+                      ₹ {(relatedProduct?.price || 0).toFixed(2)}{" "}
+                      <span className="line-through text-gray-500 text-xl">
+                        ₹ 799
+                      </span>
                     </p>
                   </div>
                 </div>

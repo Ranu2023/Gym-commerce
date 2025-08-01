@@ -448,11 +448,11 @@ export default function ProfilePage() {
 
                         <div className="text-right">
                           <p className="text-lg font-semibold text-gray-900">
-                            ${order.totalAmount.toFixed(2)}
+                            ₹ {order.totalAmount.toFixed(2)}
                           </p>
                           {order.discountAmount > 0 && (
                             <p className="text-sm text-green-600">
-                              Saved ${order.discountAmount.toFixed(2)}
+                              Saved ₹ {order.discountAmount.toFixed(2)}
                             </p>
                           )}
                           <p className="text-sm text-gray-500">
