@@ -43,7 +43,7 @@ export default function CartPage() {
   useEffect(() => {
     // Load Cashfree client-side
     const initCashfree = async () => {
-      const cf = await load({ mode: "sandbox" });
+      const cf = await load({ mode: "production" });
       setCashfree(cf);
       setVersion(cf?.version());
     };
