@@ -30,10 +30,10 @@ export default function Navbar() {
     }
   }, []);
 
-  useEffect(() => {
-    // This will reload the page when the component mounts
-    window.location.reload();
-  }, []); // Empty dependency array
+  // useEffect(() => {
+  //   // This will reload the page when the component mounts
+  //   window.location.reload();
+  // }, []); // Empty dependency array
 
   const fetchCartCount = async () => {
     try {
