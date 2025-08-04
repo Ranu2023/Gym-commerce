@@ -30,13 +30,19 @@ export default function LoginPage() {
     e.preventDefault();
     setIsLoading(true);
     setError("");
-
+  
     try {
       const response = await api.post("/auth/login", formData);
-
+  
       if (response.data.success) {
+        // Store token and user
         localStorage.setItem("token", response.data.data.token);
         localStorage.setItem("user", JSON.stringify(response.data.data.user));
+  
+        // Set reload flag in sessionStorage
+        sessionStorage.setItem("reloaded", "true");
+  
+        // Navigate to home
         router.push("/");
       }
     } catch (error: any) {
@@ -45,6 +51,7 @@ export default function LoginPage() {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">

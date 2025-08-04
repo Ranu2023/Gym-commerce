@@ -489,13 +489,22 @@ export default function ProductCard({
   const [isLoading, setIsLoading] = useState(false);
 
   const handleAddToCart = async () => {
+    const token = localStorage.getItem("token"); // <-- adjust if using different auth key
+  
+    if (!token) {
+      console.warn("Please login to add items to cart");
+      alert("Please login first");
+      window.location.href = "/login"; // or use router.push("/login") if using `useRouter`
+      return;
+    }
+  
     try {
       setIsLoading(true);
       const response = await api.post("/cart", {
         productId: product?._id,
         quantity,
       });
-
+  
       if (response?.data?.success) {
         onAddToCart?.();
         setQuantity(1);
@@ -507,7 +516,7 @@ export default function ProductCard({
       setIsLoading(false);
     }
   };
-
+  
   const incrementQuantity = () => {
     try {
       if (quantity < (product?.stock || 0)) {
