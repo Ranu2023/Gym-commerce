@@ -493,7 +493,7 @@ export default function ProductCard({
 
     if (!token) {
       console.warn("Please login to add items to cart");
-      alert("Please login first OR Creacte an account to add items to cart");
+      alert("Please login first OR Create an account to add items to cart");
       window.location.href = "/login"; // or use router.push("/login") if using `useRouter`
       return;
     }
